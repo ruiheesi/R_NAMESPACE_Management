@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-cd $3
+cd $1
 
 # Check if DESCRIPTION file exist
 
