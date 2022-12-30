@@ -1,14 +1,11 @@
 name: 'R-actions'
 description: 'Generate NAMESPACE file for specific R package and run check'
 inputs:
-  container_id:  ruihe864/dsp_github_workflow_env:dsp_github_workflow_env
-    description: 'What container should be ran for testing?'
-    default: 'None'
   buildSubDirectory:
     description: 'The path saving source code of package in repository'
     default: './'
 runs:
   runs-on: ubuntu-latest
-  container: ${{inputs.container_id}}
+  container: ruihe864/dsp_github_workflow_env:dsp_github_workflow_env
   args:
     - ${{inputs.buildSubDirectory}}
