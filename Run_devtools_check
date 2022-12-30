@@ -1,0 +1,20 @@
+#!/bin/sh -l
+
+cd $3
+
+# Check if DESCRIPTION file exist
+
+if [ -f DESCRIPTION ]; then
+    echo "DESCRIPTION exist."
+    
+    Rscript -e 'if(! require("devtools")){install.packages("devtools")};'
+    Rscript -e 'library(devtools);document();check();'  
+    
+    echo $(ls)
+
+else 
+    echo "DESCRIPTION file does not exist."
+    exit 1
+fi
+
+
